@@ -39,7 +39,7 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 1. The `Navigation.ipynb` notebook contains the code for training the agent. Run the code cell by cell to train the model.
 		
-	- Please locate the executable of the environment in the i3rd cell.
+	- Please locate the executable of the environment in the 3rd cell.
 
 2. The `Navigation_AgentPlay.ipynb` notebook contains the code to create an agent by loading the weights.
 		

@@ -37,7 +37,14 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 ### Instructions
 
-The `Navigation.ipynb` notebook contains the code for training the agent. Run the code cell by cell to train the model. 
+1. The `Navigation.ipynb` notebook contains the code for training the agent. Run the code cell by cell to train the model.
+		
+	- Please locate the executable of the environment in the i3rd cell.
 
-The `Navigation_AgentPlay.ipynb` notebook contains the code to create an agent by loading the weights
+2. The `Navigation_AgentPlay.ipynb` notebook contains the code to create an agent by loading the weights.
+		
+	- Please locate the executable of the environment in the 3rd cell.
+3.  The `model.py` contains the class QNetwork which implements the neural network architecture
+4.  The `dqn_agent.py` contains the class Agent which is used to create an agent based on Deep Q-Network (DQN). The class Agent contains the methods to run, train,store experiences the agent. This file also containts the hyperparameters of the agent.
+
 

@@ -3,7 +3,7 @@
 
 ## Introduction
 
-The aim of this project is to train an agent to navigate in the given environment to collect yellow bannans and avoid purple bannanas.
+The aim of this project is to train an agent to navigate in the given environment to collect yellow bananas and avoid purple bananas.
 
 ![Trained Agent][image1]
 
@@ -18,9 +18,8 @@ Four discrete actions are available, corresponding to:
 - **`3`** - turn right.
 
 The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
-
-## Deep Q Network Algorithm
-
-## Double Q Network
-
+## Algorithm
+### Markov Decision Process and Tabular Method
+### Deep Q Network Algorithm
+### Double Q Network
 ## Results and Conclusion

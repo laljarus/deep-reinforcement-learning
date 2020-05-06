@@ -5,7 +5,7 @@
 
 The aim of this project is to train an agent to navigate in the given environment to collect yellow bananas and avoid purple bananas.
 
-![Trained Agent](/images/TrainedAgent.gif)
+![Trained Agent](./images/TrainedAgent.gif)
 
 *Figure 1: Interaction of a Trained Agent*
 

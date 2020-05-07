@@ -5,7 +5,7 @@
 
 The aim of this project is to train an agent to navigate in the given environment to collect yellow bananas and avoid purple bananas.
 
-![Trained Agent](/images/TrainedAgent.gif)
+![Trained Agent](./images/TrainedAgent.gif)
 
 *Figure 1: Interaction of a Trained Agent*
 
@@ -21,11 +21,27 @@ Four discrete actions are available, corresponding to:
 
 The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
 ## Algorithm
-### Markov Decision Process and Tabular Method
+### Markov Decision Process
 
-This project uses a Deep Q Network algorithm which is based on Q-learning implemented using neural networks. Reinforcement learning algorithms such Q learning interacts with the environment and learns from the experience unlike supervised learning. In reinforcement learning methods the algorithm is called an agent. The agent interacts with the environment through actions taken based on observations, which are called states. And the environment provides the agent a feedback through rewards. The agent learns the task by aiming to maximize the rewards. The task can be either episodic for example navigating a robot from point A to point B or the task can be continuous for example balancing an inverted pendulum.
+This project uses a Deep Q Network algorithm which is based on Q-learning. Reinforcement learning algorithms such Q learning interacts with the environment and learns from the experience instead of labeled data unlike supervised learning. In reinforcement learning methods the algorithm is called an agent. The agent interacts with the environment through actions taken based on observations, which are called states. And the environment provides the agent a feedback through rewards. The agent learns the task by aiming to maximize the rewards. The task can be either episodic for example navigating a robot from point A to point B or the task can be continuous for example balancing an inverted pendulum. A reinforcement learning problem can be defined by a (finite) Markov Decision Problem(MDP). A finite MDP has a discrete/finite set of states,actions and rewards. An important property of an MDP is that the state of the environment in the future time steps depend only on the current state and the current not on the history of states. The following figure shows the interaction between an agent and the environment in an MDP.
+
+![image2](./images/MDP.png)
+
+Figure 2: Agent-Environment interaction(source: Reinforcement Learning Richard R.Sutton and Andrew G.Barto)
+
+The agent and environment interaction in discrete time steps t= 1,2,3,... in each step the agent receives the state S<sub>t</sub> and takes an action A<sub>t</sub> and the environment provides the agent with new reward R<sub>t+1</sub> and S<sub>t+1</sub> and process continues in the sequence s<sub>0</sub>,a<sub>0</sub>,r<sub>1</sub>,s<sub>1</sub>,a<sub>1</sub>,r<sub>2</sub>,s<sub>2</sub>,a<sub>2</sub>.....   
+
+Another property of MDP is that the current state and action does not determine only the immediate reward but also the future rewards. The agent learns the task by trying to maximize the cumulative rewards in the long run. Since agent cannot influence the past the agent can maximize it cumulative rewards in the future time steps by taking actions which will seek maximum rewards in the future time steps. The discounted cumulative rewards(G<sub>t</sub>) at a time step t can be given by
+
+G<sub>t</sub> = R<sub>t+1</sub> + &gamma;R<sub>t+2</sub>+&gamma;<sup>2</sup>R<sub>t+3</sub>.... = &Sigma;<sup>&infin;</sup><sub>k=0</sub>&gamma;<sup>k</sup>R<sub>t+k+1</sub>
+
+(source: Reinforcement Learning Richard R.Sutton and Andrew G.Barto)
+
+Here &gamma; is called as the discount factor and it chosen between 0 and 1. The value of &gamma; makes the agent to choose between immediate rewards(close to zero) and long term rewards(close to 1).
 
 
-### Deep Q Network Algorithm
+
+
+### Q Learning and Deep Q Network Algorithm
 ### Double Q Network
 ## Results and Conclusion

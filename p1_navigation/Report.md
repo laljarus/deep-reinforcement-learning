@@ -90,7 +90,7 @@ Apart from the standard DQN architecture a Double Deep Q Network (DDQN) architec
 
 ## Results and Future Plans
 
-The following figure shows the plot of rewards for each episodes.The DDQN algorithm used in this project is able to quickly solve the environment in 680 episodes.
+The following figure shows the plot of rewards for each episodes.The DDQN algorithm used in this project is able to quickly solve the environment in 680 episodes. The performance of the trained agent in the environment can be seen in the *Figure 1*.
 
 ![RewardsPlot](./images/RewardsPlot.png)
 

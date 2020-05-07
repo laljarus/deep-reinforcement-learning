@@ -39,8 +39,22 @@ G<sub>t</sub> = R<sub>t+1</sub> + &gamma;R<sub>t+2</sub>+&gamma;<sup>2</sup>R<su
 
 Here &gamma; is called as the discount factor and it chosen between 0 and 1. The value of &gamma; makes the agent to choose between immediate rewards(close to zero) and long term rewards(close to 1).
 
+In reinforcement learning problem policy function &pi; determines the action a<sub>t</sub> which has to be taken by the agent when the environment is in s<sub>t</sub>. Value function v is the estimate how good it is for the agent to be in a given state. The state-value function of a state s for a given policy &pi; is denoted as v<sub>&pi;</sub>(s) is the expected return of rewards when the agent starts at the state s and takes actions based on policy &pi; thereafter. 
 
+v<sub>&pi;</sub>(s) = E<sub>&pi;</sub>[G<sub>t</sub>|S<sub>t</sub>=s] = E<sub>&pi;</sub>[&Sigma;<sup>&infin;</sup><sub>k=0</sub>&gamma;<sup>k</sup>R<sub>t+k+1</sub>|S<sub>t</sub>=s]
 
+Similarly, we define the value of taking action a in state s under a policy &pi;, denoted q<sub>&pi;</sub>(s, a), as the expected return starting from s, taking the action a, and thereafter
+following policy &pi;
+
+q<sub>&pi;</sub>(s,a) = E<sub>&pi;</sub>[G<sub>t</sub>|S<sub>t</sub>=s,A<sub>t</sub>=a] = E<sub>&pi;</sub>[&Sigma;<sup>&infin;</sup><sub>k=0</sub>&gamma;<sup>k</sup>R<sub>t+k+1</sub>|S<sub>t</sub>=s,A<sub>t</sub>=a]
+
+The function q<sub>&pi;</sub> is called the action value function.
+
+The aim of reinforcement learning problem is to find a policy function &pi; which maximizes the returns in long run. This policy is called as the optimal policy &pi;* which has expected returns greater than or equal to all other policies. The value function associated with this policy is called as the optimal value function v*(s) similarly the action value function associated with optimal policy is called as optimal action value function q*(s,a).
+
+v*(s) = max v<sub>&pi;</sub>(s)
+
+q*(s,a) = max q<sub>&pi;</sub>(s,a)
 
 ### Q Learning and Deep Q Network Algorithm
 ### Double Q Network

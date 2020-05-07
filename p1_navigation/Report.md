@@ -43,10 +43,15 @@ In reinforcement learning problem policy function &pi; determines the action a<s
 
 v<sub>&pi;</sub>(s) = E<sub>&pi;</sub>[G<sub>t</sub>|S<sub>t</sub>=s] = E<sub>&pi;</sub>[&Sigma;<sup>&infin;</sup><sub>k=0</sub>&gamma;<sup>k</sup>R<sub>t+k+1</sub>|S<sub>t</sub>=s]
 
+(source: Reinforcement Learning Richard R.Sutton and Andrew G.Barto)
+
 Similarly, we define the value of taking action a in state s under a policy &pi;, denoted q<sub>&pi;</sub>(s, a), as the expected return starting from s, taking the action a, and thereafter
 following policy &pi;
 
 q<sub>&pi;</sub>(s,a) = E<sub>&pi;</sub>[G<sub>t</sub>|S<sub>t</sub>=s,A<sub>t</sub>=a] = E<sub>&pi;</sub>[&Sigma;<sup>&infin;</sup><sub>k=0</sub>&gamma;<sup>k</sup>R<sub>t+k+1</sub>|S<sub>t</sub>=s,A<sub>t</sub>=a]
+
+(source: Reinforcement Learning Richard R.Sutton and Andrew G.Barto)
+
 
 The function q<sub>&pi;</sub> is called the action value function.
 
@@ -55,6 +60,8 @@ The aim of reinforcement learning problem is to find a policy function &pi; whic
 v*(s) = max v<sub>&pi;</sub>(s)
 
 q*(s,a) = max q<sub>&pi;</sub>(s,a)
+
+(source: Reinforcement Learning Richard R.Sutton and Andrew G.Barto)
 
 ### Q Learning and Deep Q Network Algorithm
 ### Double Q Network

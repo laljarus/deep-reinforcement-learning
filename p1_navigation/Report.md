@@ -84,7 +84,21 @@ The above figure shows the pseudo code of the q-learning algorithm. During each 
 ### Deep Q Network Algorithm
 The Deep Q Network (DQN) algorithm is based on the q-learning explained in the section before. The main difference is the use of a neural network to estimate the action-value function instead of a Q-table. The advantages using neural networks are they are very good non-linear function approximators and the use of neural network enables reinforcement learning to be applied in problems with large state-space which would otherwise be impossible. Neural networks were first successfully used to solve atari video games in the 2015 paper ["Human-level control through deep reinforcement learning"](http://www.davidqiu.com:8888/research/nature14236.pdf). The paper solved two major issues present in the use of neural networks in RL problems and it formed the basis of Deep Q Network . One is the violation of Markov process where an action taken in a state at a time step not only affects the next state but it also affects several sequential states. This avoided in the 2015 paper by using a circular buffer where each tuple of (state,action,reward,next state) are stored and a random batch is taken to train the neural network. Based on the q-learning algorithm action-value function is updated by minimizing the difference between value estimated using the current state-action pair and the estimated value of next state and greedy action.The use of same neural network is used to estimate the state-action value for current state and the next state in the parameter update step would make the algorithm unstable and diverge. To solve this the DQN algorithm uses two identical neural network on for estimating the value function of the current reward which is called current network and another the for estimating the value of next step which is called the target network. Only the current network is trained using gradient descent and the parameter values of the current network is copied to the target network based on the update equation after a  certain specified time steps which is a hyperparameter. 
 
-In this project a neural network containing three fully connected layers are used to to map between the state vector of size 37 which is the input and the action vector of size 4 which is the ouput vector. The intermediate layer have an output size of 64 each. And the first two fully connected layers are followed by RELU activation functions to add non-linearity. 
+In this project a neural network containing three fully connected layers are used to to map between the state vector of size 37 which is the input and the action vector of size 4 which is the ouput vector. The intermediate layer have an output size of 64 each. And the first two fully connected layers are followed by RELU activation functions to add non-linearity.  The table below shows the hyperparameters used in the project to train the agent.
+
+
+|Hyperparameter|Value|Description|
+|-|:-:|-|
+|BUFFER_SIZE |100000|Replay buffer size|
+|BATCH_SIZE | 64|Minibatch size|
+|GAMMA|0.99|discount factor|
+|TAU|0.001|weighing parameter for soft update of target parameters|
+|LR| 0.0004|Learning rate|
+|UPDATE_EVERY|4|how often to update the network|
+|UPDATE_TARGET_EVERY|4|Update the taget network|
+|eps_start|1.0| Epsilon starting value|
+|eps_end|0.01| Epsilon ending value|
+|eps_decay|0.995|Epsilon decay factor|
 
 Apart from the standard DQN architecture a Double Deep Q Network (DDQN) architecture discussed  in the paper [Deep Reinforcement learning using Double ](https://arxiv.org/abs/1509.06461) is used in this project. This significantly improves the learning time of agent for solving the environment from 1700 episodes to 680 episodes with DDQN architecture.    
 
